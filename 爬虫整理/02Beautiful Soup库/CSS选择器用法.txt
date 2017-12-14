@@ -1,0 +1,71 @@
+http://www.cnblogs.com/kongzhagen/p/6472746.html
+
+
+
+
+
+1、通过标签选择
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+# 选择所有title标签
+soup.select("title")
+# 选择所有p标签中的第三个标签
+soup.select("p:nth-of-type(3)")
+# 选择body标签下的所有a标签
+soup.select("body a")
+# 选择body标签下的直接a子标签
+soup.select("body > a")
+# 选择id=link1后的所有兄弟节点标签
+soup.select("#link1 ~ .mysis")
+# 选择id=link1后的下一个兄弟节点标签
+soup.select("#link1 + .mysis")
+　　2、通过类名查找
+1
+2
+# 选择a标签，其类属性为mysis的标签
+soup.select("a.mysis")
+　　3、通过id查找
+1
+2
+# 选择a标签，其id属性为link1的标签
+soup.select("a#link1")
+　　4、通过【属性】查找，当然也适用于class
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+# 选择a标签，其属性中存在myname的所有标签
+soup.select("a[myname]")
+# 选择a标签，其属性href=http://example.com/lacie的所有标签
+soup.select("a[href='http://example.com/lacie']")
+# 选择a标签，其href属性以http开头
+soup.select('a[href^="http"]')
+# 选择a标签，其href属性以lacie结尾
+soup.select('a[href$="lacie"]')
+# 选择a标签，其href属性包含.com
+soup.select('a[href*=".com"]')
+　　5、tag.select
+1
+2
+3
+4
+# 选择第一个a标签中的b标签的文本内容
+atags = soup.select('a')[0]
+atags = atags.select('b')[0].get_text()
+print atags
