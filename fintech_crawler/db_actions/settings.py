@@ -1,0 +1,11 @@
+# set hdfs env
+HDFS_HOST = ["120.26.168.70", "120.26.90.111"]
+HDFS_PORT = 50070
+
+# set redis env
+REDIS_HOST = "120.55.73.156"
+REDIS_PORT = 6379
+
+# set hbase env
+HBASE_HOST = "114.55.72.10"
+HBASE_PORT = 9090
